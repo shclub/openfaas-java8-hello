@@ -1,0 +1,12 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://172.27.0.2:31112
+functions:
+  openfaas-java8-hello:
+    lang: java8
+    handler: ./openfaas-java8-hello
+    image: 172.27.0.225:8089/openfaas/openfaas-java8-hello:latest
+    secrets:
+     - openfaas-harbor
+
