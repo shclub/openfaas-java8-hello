@@ -1,5 +1,3 @@
-package com.openfaas.function;
-
 import io.nuclio.Context;
 import io.nuclio.Event;
 import io.nuclio.EventHandler;
@@ -12,3 +10,4 @@ public class Handler implements EventHandler {
        return new Response().setBody("hello world jake");
     }
 }
+
