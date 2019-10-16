@@ -1,16 +1,14 @@
 package com.openfaas.function;
 
-import com.openfaas.model.IHandler;
-import com.openfaas.model.IResponse;
-import com.openfaas.model.IRequest;
-import com.openfaas.model.Response;
+import io.nuclio.Context;
+import io.nuclio.Event;
+import io.nuclio.EventHandler;
+import io.nuclio.Response;
 
-public class Handler implements com.openfaas.model.IHandler {
+public class Handler implements EventHandler {
 
-    public IResponse Handle(IRequest req) {
-        Response res = new Response();
-	    res.setBody("Hello, world!");
-
-	    return res;
+    @Override
+    public Response handleEvent(Context context, Event event) {
+       return new Response().setBody("hello world jake");
     }
 }
